@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div className='bg-black min-h-screen flex items-center justify-center'>
       <div className='bg-white p-8 rounded-lg shadow-lg w-full max-w-md'>
-        <h2 className='text-3xl font-bold text-center text-gray-800 mb-6'>EASYHIRE</h2>
+        <h2 className='text-3xl font-bold text-center text-gray-800 mb-6'>BIDSURE</h2>
         <div className="space-y-4">
           <input
             className="py-3 w-full rounded-md text-gray-700 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"

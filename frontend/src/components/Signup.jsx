@@ -1,12 +1,14 @@
 import { TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { getauthaxios } from '../utility/Request';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: '',
-    email: '',
     password: '',
+    email: '',
     mobile: '',
+    role: 'CONTRACTOR'
   });
 const [number, setNumber] = useState('')
   const handleChange = (e) => {
@@ -17,10 +19,13 @@ const [number, setNumber] = useState('')
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     
     console.log('Form data submitted:', formData);
+    const api = getauthaxios();
+    const response = await api.post("/auth/register", formData);
+    console.log(response.data)
   };
 
   return (
@@ -69,8 +74,8 @@ const [number, setNumber] = useState('')
             <input
               type="text"
               id='phone'
-              
-              
+              value={formData.mobile}
+              name='mobile'
               onChange={handleChange}
               required
               className="py-3 w-full rounded-md text-gray-700 border border-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
